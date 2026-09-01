@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#151313" />
+    <title>Eva Studio — Unisex Salon, Faridabad</title>
+    <meta name="description" content="Eva Studio Unisex Salon, Faridabad. Book your next hair, beauty and grooming appointment." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <style>
+      :root { --ink:#171313; --paper:#fffaf6; --gold:#d7ac73; --coral:#e67865; --muted:#766b66; --line:#eadfd7; }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; font-family:'DM Sans',sans-serif; background:var(--paper); color:var(--ink); }
+      a { color:inherit; text-decoration:none; }
+      .container { width:min(1120px,calc(100% - 40px)); margin:auto; }
+      .eyebrow { color:var(--coral); letter-spacing:.14em; font-size:.7rem; font-weight:700; text-transform:uppercase; }
+      .button { display:inline-flex; align-items:center; justify-content:center; gap:.55rem; border:1px solid transparent; border-radius:999px; padding:.85rem 1.35rem; font-weight:700; font-size:.88rem; transition:.2s ease; }
+      .button:hover { transform:translateY(-2px); }
+      .button-primary { background:var(--coral); color:white; box-shadow:0 12px 25px #b4574840; }
+      .button-light { border-color:#ffffff70; color:white; }
+      .button-light:hover { background:white; color:var(--ink); }
+      nav { height:78px; display:flex; align-items:center; justify-content:space-between; position:absolute; z-index:4; inset:0 0 auto; color:white; }
+      .brand { display:flex; align-items:center; gap:.65rem; font-family:'Playfair Display',serif; font-size:1.42rem; font-weight:700; letter-spacing:-.04em; }
+      .brand-mark { width:31px; height:31px; border:1px solid var(--gold); border-radius:50%; display:grid; place-items:center; color:var(--gold); font-family:'Playfair Display',serif; font-style:italic; }
+      .nav-links { display:flex; gap:1.7rem; font-size:.85rem; font-weight:600; }
+      .nav-phone { border-bottom:1px solid var(--gold); padding-bottom:.2rem; font-size:.84rem; font-weight:700; }
+      .menu { display:none; background:none; color:white; border:0; font-size:1.35rem; }
+      .hero { min-height:730px; color:white; position:relative; overflow:hidden; background:#201c1b url('hero-salon.png') center/cover; display:grid; align-items:center; }
+      .hero::before { content:''; position:absolute; inset:0; background:linear-gradient(90deg,#151111 0%,#171212f2 34%,#1e15198c 58%,#1c121226 100%),linear-gradient(0deg,#17111165,transparent 55%); }
+      .hero::after { content:''; position:absolute; width:500px; height:500px; border:1px solid #d7ac7340; border-radius:50%; right:-150px; bottom:-225px; }
+      .hero-copy { z-index:2; position:relative; padding:145px 0 100px; max-width:620px; }
+      h1,h2,h3,p { margin-top:0; }
+      h1 { font-family:'Playfair Display',serif; font-size:clamp(3.15rem,6.2vw,5.8rem); letter-spacing:-.06em; line-height:.96; margin:.75rem 0 1.3rem; }
+      h1 em { color:var(--gold); font-weight:600; }
+      .hero-copy p { max-width:450px; line-height:1.7; color:#f0e7e1; font-size:1.02rem; }
+      .hero-actions { display:flex; gap:.8rem; flex-wrap:wrap; margin-top:1.8rem; }
+      .trust { display:flex; align-items:center; gap:1rem; margin-top:3.8rem; font-size:.78rem; color:#e4d5cd; }
+      .avatars { display:flex; }
+      .avatars span { width:27px; height:27px; border:2px solid var(--ink); border-radius:50%; margin-left:-7px; background:linear-gradient(135deg,#efb38c,#543d36); }
+      .avatars span:first-child { margin:0; background:linear-gradient(135deg,#b98768,#f2d5ba); }
+      .avatars span:nth-child(3) { background:linear-gradient(135deg,#4c3128,#d69765); }
+      section { padding:100px 0; }
+      .intro { display:grid; grid-template-columns:1fr 1.15fr; gap:9vw; align-items:end; }
+      h2 { font-family:'Playfair Display',serif; font-size:clamp(2.3rem,4.3vw,4rem); letter-spacing:-.05em; line-height:1.05; margin:.7rem 0 0; }
+      .intro p { margin:0; color:var(--muted); line-height:1.8; max-width:480px; }
+      .highlights { padding:0 0 88px; }
+      .highlight-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+      .highlight { padding:1.55rem 1.2rem 1.55rem 0; margin-right:1.4rem; border-right:1px solid var(--line); }
+      .highlight:last-child { border-right:0; }
+      .highlight strong { display:block; font-family:'Playfair Display',serif; font-size:1.55rem; letter-spacing:-.04em; margin-bottom:.3rem; }
+      .highlight span { color:var(--muted); font-size:.83rem; }
+      .services { background:#f4ebe4; }
+      .services-head { display:flex; justify-content:space-between; gap:1.5rem; align-items:end; margin-bottom:2.5rem; }
+      .services-head p { color:var(--muted); max-width:300px; line-height:1.6; margin:0; }
+      .service-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid #d8c9be; }
+      .service { padding:1.7rem 1.25rem 1.8rem 0; margin-right:1.25rem; min-height:207px; border-right:1px solid #d8c9be; position:relative; }
+      .service:last-child { border:0; }
+      .service-num { color:var(--gold); font-family:'Playfair Display',serif; font-size:1.15rem; }
+      .service h3 { font-family:'Playfair Display',serif; margin:2.25rem 0 .45rem; font-size:1.38rem; letter-spacing:-.03em; }
+      .service p { font-size:.83rem; line-height:1.65; color:var(--muted); margin:0; }
+      .ritual { display:grid; grid-template-columns:1fr 1fr; min-height:560px; background:var(--ink); color:white; }
+      .ritual-image { min-height:400px; background:linear-gradient(140deg,#432b2866,#c37b5e26),url('grooming.png') center/cover; position:relative; overflow:hidden; }
+      .ritual-image:after { content:''; position:absolute; width:370px; height:370px; border:1px solid #f4d9b077; border-radius:50%; left:18%; top:12%; }
+      .ritual-copy { padding:clamp(3rem,7vw,7rem); display:flex; flex-direction:column; justify-content:center; }
+      .ritual-copy p { color:#d6c8c1; line-height:1.8; max-width:420px; }
+      .ritual-copy .button { align-self:flex-start; margin-top:.75rem; }
+      .why { background:#fff; }
+      .why-grid { display:grid; grid-template-columns:.84fr 1.16fr; gap:8vw; align-items:start; }
+      .why-intro p { color:var(--muted); line-height:1.8; margin-top:1.2rem; max-width:360px; }
+      .reasons { border-top:1px solid var(--line); }
+      .reason { display:grid; grid-template-columns:54px 1fr; gap:1rem; padding:1.55rem 0; border-bottom:1px solid var(--line); }
+      .reason-num { font-family:'Playfair Display',serif; color:var(--coral); font-size:1.1rem; }
+      .reason h3 { font-family:'Playfair Display',serif; font-size:1.35rem; letter-spacing:-.03em; margin:0 0 .3rem; }
+      .reason p { color:var(--muted); font-size:.88rem; line-height:1.65; margin:0; }
+      .gallery { display:grid; grid-template-columns:1.18fr .82fr .82fr; grid-template-rows:235px 235px; gap:14px; margin-top:2.5rem; }
+      .gallery div { overflow:hidden; position:relative; background:#d8b391 center/cover; }
+      .gallery div:after { content:''; position:absolute; inset:0; background:linear-gradient(150deg,#ffffff30,transparent 47%,#30202045); }
+      .gallery div:first-child { grid-row:span 2; background-image:url('hair-portrait.png'); }
+      .gallery div:nth-child(2) { background-image:linear-gradient(145deg,#d8a57533,#5c353033),url('hero-salon.png'); }
+      .gallery div:nth-child(3) { background-image:linear-gradient(135deg,#32272744,#b67c6533),url('grooming.png'); }
+      .gallery div:nth-child(4) { background-image:linear-gradient(120deg,#dec09e22,#34242644),url('hero-salon.png'); background-position:center 75%; }
+      .gallery span { position:absolute; z-index:1; bottom:1rem; left:1rem; color:#fff; font-family:'Playfair Display',serif; font-size:1.25rem; }
+      .reviews { background:#f4ebe4; }
+      .reviews-title { display:flex; justify-content:space-between; align-items:end; gap:2rem; }
+      .review-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:2.7rem; }
+      .review { background:#fffaf6; padding:1.65rem; min-height:222px; display:flex; flex-direction:column; }
+      .stars { color:var(--gold); letter-spacing:.12em; font-size:.9rem; }
+      .review blockquote { margin:1.15rem 0; font-family:'Playfair Display',serif; font-size:1.15rem; line-height:1.48; letter-spacing:-.02em; }
+      .review cite { font-style:normal; font-size:.78rem; color:var(--muted); margin-top:auto; }
+      .faq-wrap { display:grid; grid-template-columns:.8fr 1.2fr; gap:8vw; }
+      .faq-copy p { color:var(--muted); line-height:1.75; margin-top:1rem; max-width:330px; }
+      .faq-list { border-top:1px solid var(--line); }
+      details { border-bottom:1px solid var(--line); padding:1.15rem 0; }
+      summary { cursor:pointer; font-weight:700; font-size:.95rem; list-style:none; display:flex; justify-content:space-between; gap:1rem; }
+      summary:after { content:'+'; color:var(--coral); font-size:1.2rem; font-weight:400; line-height:.85; }
+      details[open] summary:after { content:'−'; }
+      details p { color:var(--muted); line-height:1.65; font-size:.86rem; margin:1rem 2rem .15rem 0; }
+      .book { background:var(--coral); padding:0; overflow:hidden; }
+      .book-inner { color:white; min-height:370px; display:grid; grid-template-columns:1.2fr .8fr; align-items:center; position:relative; }
+      .book-inner:after { content:'E'; position:absolute; right:-.05em; bottom:-.42em; font-family:'Playfair Display',serif; font-size:28rem; font-style:italic; color:#ffffff18; line-height:1; }
+      .book-copy { position:relative; z-index:1; padding:4.5rem 0; }
+      .book h2 { max-width:600px; }
+      .book p { margin:.9rem 0 1.7rem; color:#fff3ee; }
+      .booking-card { position:relative; z-index:1; background:#fffaf6; color:var(--ink); padding:1.6rem; border-radius:4px; box-shadow:0 18px 35px #70312838; }
+      .booking-card h3 { font-family:'Playfair Display',serif; font-size:1.4rem; margin-bottom:.8rem; }
+      .booking-card p { color:var(--muted); font-size:.87rem; line-height:1.55; }
+      .booking-card .button { width:100%; background:var(--ink); color:white; }
+      footer { background:var(--ink); color:#f3e7df; padding:2.7rem 0 1.4rem; }
+      .footer-top { display:flex; justify-content:space-between; align-items:flex-start; gap:2rem; }
+      footer .brand { color:white; }
+      footer p { color:#bdafa8; font-size:.84rem; line-height:1.65; max-width:280px; margin:.8rem 0 0; }
+      .footer-links { display:flex; gap:1.2rem; font-size:.84rem; }
+      .footer-bottom { border-top:1px solid #ffffff20; padding-top:1.2rem; margin-top:2.5rem; color:#9f918b; font-size:.72rem; display:flex; justify-content:space-between; }
+      .float-call { display:none; }
+      @media (max-width:760px) {
+        .container { width:min(100% - 32px,1120px); }
+        nav { height:66px; } .nav-links,.nav-phone { display:none; } .menu{display:block;}
+        .hero { min-height:660px; background-position:64% center; }
+        .hero-copy { padding:145px 0 75px; } .trust { margin-top:3.1rem; }
+        section { padding:70px 0; } .intro,.ritual,.book-inner,.why-grid,.faq-wrap { grid-template-columns:1fr; gap:1.8rem; }
+        .highlights { padding:0 0 65px; } .highlight-grid { grid-template-columns:1fr; } .highlight { border-right:0; border-bottom:1px solid var(--line); padding:1.1rem 0; margin:0; } .highlight:last-child { border-bottom:0; }
+        .services-head { display:block; } .services-head p { margin-top:1rem; }
+        .service-grid { grid-template-columns:1fr 1fr; } .service { border-bottom:1px solid #d8c9be; min-height:170px; } .service:nth-child(2) { border-right:0; }
+        .ritual-copy { padding:4rem 24px; } .ritual-image { min-height:310px; }
+        .gallery { grid-template-columns:1fr 1fr; grid-template-rows:180px 180px 160px; } .gallery div:first-child { grid-row:span 2; } .gallery div:nth-child(4) { grid-column:span 2; }
+        .book-copy { padding:4rem 0 1.5rem; } .booking-card { margin-bottom:4rem; } .reviews-title { display:block; } .review-grid { grid-template-columns:1fr; margin-top:1.8rem; } .review { min-height:0; }
+        .footer-top,.footer-bottom { display:block; } .footer-links { margin-top:1.6rem; } .footer-bottom span:last-child { display:block; margin-top:.5rem; }
+        .float-call { display:grid; place-items:center; position:fixed; right:18px; bottom:18px; z-index:6; width:52px; height:52px; border-radius:50%; background:var(--coral); color:white; box-shadow:0 10px 25px #6e302880; font-size:1.25rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero" id="home">
+      <nav class="container">
+        <a class="brand" href="#home"><span class="brand-mark">E</span> Eva Studio</a>
+        <div class="nav-links"><a href="#services">Services</a><a href="#experience">Experience</a><a href="#gallery">Gallery</a></div>
+        <a class="nav-phone" href="tel:+919220745756">092207 45756</a>
+        <button class="menu" aria-label="Open navigation">☰</button>
+      </nav>
+      <div class="container hero-copy">
+        <div class="eyebrow">Unisex salon · Faridabad</div>
+        <h1>Feel like your <em>best</em> self.</h1>
+        <p>Thoughtful hair, skin and grooming services—created around your look, your routine and your confidence.</p>
+        <div class="hero-actions"><a class="button button-primary" href="tel:+919220745756">Book an appointment <span>→</span></a><a class="button button-light" href="#services">Explore services</a></div>
+        <div class="trust"><div class="avatars"><span></span><span></span><span></span></div><span>Personalised care, every visit.</span></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="container intro">
+        <div><div class="eyebrow">Eva, your kind of beautiful</div><h2>Good hair days begin with good listening.</h2></div>
+        <p>From a subtle refresh to a complete transformation, our artists bring expert technique and an easy, welcoming energy to every chair. Come in, switch off, and leave feeling unmistakably you.</p>
+      </section>
+      <section class="container highlights" aria-label="Eva Studio highlights">
+        <div class="highlight-grid">
+          <div class="highlight"><strong>Personalised</strong><span>Every appointment starts with a conversation.</span></div>
+          <div class="highlight"><strong>For everyone</strong><span>Modern hair, beauty and grooming under one roof.</span></div>
+          <div class="highlight"><strong>Made to last</strong><span>Looks designed to work beyond the salon chair.</span></div>
+        </div>
+      </section>
+
+      <section class="services" id="services"><div class="container">
+        <div class="services-head"><div><div class="eyebrow">What we do</div><h2>Your complete beauty ritual.</h2></div><p>Every service begins with a quick consultation, so the result feels right for you.</p></div>
+        <div class="service-grid">
+          <article class="service"><div class="service-num">01</div><h3>Hair Studio</h3><p>Cuts, styling, colour, care and transformation services.</p></article>
+          <article class="service"><div class="service-num">02</div><h3>Skin & Beauty</h3><p>Facials, clean-ups and beauty essentials for your glow.</p></article>
+          <article class="service"><div class="service-num">03</div><h3>Grooming</h3><p>Sharp haircuts, beard care and premium grooming for men.</p></article>
+          <article class="service"><div class="service-num">04</div><h3>Bridal & Events</h3><p>Occasion-ready hair and makeup for your memorable moments.</p></article>
+        </div>
+      </div></section>
+
+      <section class="ritual" id="experience">
+        <div class="ritual-image" aria-label="Warm salon styling atmosphere"></div>
+        <div class="ritual-copy"><div class="eyebrow">The Eva experience</div><h2>Expert hands.<br />Easy confidence.</h2><p>No one-size-fits-all appointments. We take time to understand the look you want—and make the whole experience feel relaxed from hello to the final reveal.</p><a class="button button-light" href="tel:+919220745756">Talk to our team <span>→</span></a></div>
+      </section>
+
+      <section class="why"><div class="container why-grid">
+        <div class="why-intro"><div class="eyebrow">Why Eva Studio</div><h2>It’s the little details.</h2><p>Great salon visits are more than a haircut or a facial. They are a pause in the week, a little confidence boost, and an experience you want to return to.</p></div>
+        <div class="reasons">
+          <article class="reason"><div class="reason-num">01</div><div><h3>A look that feels like you</h3><p>We listen first, then recommend a shape, colour or service that fits your features and lifestyle.</p></div></article>
+          <article class="reason"><div class="reason-num">02</div><div><h3>Care without the rush</h3><p>From consultation to finish, we make the process comfortable, clear and unhurried.</p></div></article>
+          <article class="reason"><div class="reason-num">03</div><div><h3>Confidence for every occasion</h3><p>Everyday grooming, a fresh new colour or event-ready glam—we have your next moment covered.</p></div></article>
+        </div>
+      </div></section>
+
+      <section class="container" id="gallery">
+        <div class="eyebrow">Our space</div><h2>Made for your next reset.</h2>
+        <div class="gallery"><div><span>Signature hair</span></div><div><span>Soft glam</span></div><div><span>Fresh colour</span></div><div><span>Feel good moments</span></div></div>
+      </section>
+
+      <section class="reviews"><div class="container">
+        <div class="reviews-title"><div><div class="eyebrow">Kind words</div><h2>People leave looking good—and feeling even better.</h2></div><a class="button" style="border-color:#d9c7bb" href="tel:+919220745756">Become our next regular →</a></div>
+        <div class="review-grid">
+          <article class="review"><div class="stars">★★★★★</div><blockquote>“The consultation made all the difference. I got exactly the change I wanted, without anything feeling overdone.”</blockquote><cite>— Hair styling guest</cite></article>
+          <article class="review"><div class="stars">★★★★★</div><blockquote>“Relaxed atmosphere, friendly team and such a clean finish. This is my go-to place before every event.”</blockquote><cite>— Beauty services guest</cite></article>
+          <article class="review"><div class="stars">★★★★★</div><blockquote>“A proper grooming experience—not just a quick haircut. Left feeling fresh and confident.”</blockquote><cite>— Grooming guest</cite></article>
+        </div>
+      </div></section>
+
+      <section class="container"><div class="faq-wrap">
+        <div class="faq-copy"><div class="eyebrow">Before your visit</div><h2>Questions, answered.</h2><p>Need help picking the right service? Just call us—our team will be happy to guide you before you visit.</p><a class="button button-primary" href="tel:+919220745756">Call Eva Studio</a></div>
+        <div class="faq-list">
+          <details open><summary>Do I need to book in advance?</summary><p>We recommend calling ahead, especially for colour, beauty packages and weekend appointments, so we can reserve the right time for you.</p></details>
+          <details><summary>Can I ask for a consultation first?</summary><p>Absolutely. Share what you are looking for when you call and the team will guide you toward the right service.</p></details>
+          <details><summary>Do you offer services for both men and women?</summary><p>Yes. Eva Studio is a unisex salon, with hair, beauty and grooming services designed for everyone.</p></details>
+          <details><summary>How do I book an appointment?</summary><p>Call us directly on 092207 45756 and we will help you choose a convenient slot.</p></details>
+        </div>
+      </div></section>
+
+      <section class="book" id="book"><div class="container book-inner">
+        <div class="book-copy"><div class="eyebrow" style="color:#fff4ed">Ready when you are</div><h2>Let’s make your next look your favourite one.</h2><p>Call us to book your salon appointment.</p><a class="button button-light" href="tel:+919220745756">Call 092207 45756</a></div>
+        <aside class="booking-card"><h3>Your appointment, made easy.</h3><p>Give us a quick call and our team will help you choose the right service and time.</p><a class="button" href="tel:+919220745756">Book by phone →</a></aside>
+      </div></section>
+    </main>
+    <footer><div class="container"><div class="footer-top"><div><a class="brand" href="#home"><span class="brand-mark">E</span> Eva Studio</a><p>Unisex salon in Faridabad for hair, beauty and grooming.</p></div><div class="footer-links"><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="tel:+919220745756">Call us</a></div></div><div class="footer-bottom"><span>© 2026 Eva Studio Unisex Salon</span><span>Faridabad · 092207 45756</span></div></div></footer>
+    <a class="float-call" href="tel:+919220745756" aria-label="Call Eva Studio">☎</a>
+  </body>
+</html>
